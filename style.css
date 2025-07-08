@@ -1,146 +1,199 @@
 /* Reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-    body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    min-height: 100vh;
+/* Global */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
 }
 
-    /* Header */
-    header {
-    background: rgba(0,0,0,0.6);
-    text-align: center;
-    padding: 40px 20px;
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 40px 20px;
 }
 
-    header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #0af;
-    margin-bottom: 15px;
+header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #0af;
+  margin-bottom: 15px;
 }
 
-    header h1 {
-    font-size: 3em;
-    color: #0af;
+header h1 {
+  font-size: 2.5em;
+  color: #0af;
 }
 
-    /* Contenedor de proyectos */
-    .contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 40px;
-    gap: 30px;
+/* Contenedor de proyectos */
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 30px;
 }
 
-    /* Proyecto */
-    .proyecto {
-    background: rgba(0,0,0,0.5);
-    border: 2px solid #0af;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, background 0.3s;
-    opacity: 0;
-    transform: translateY(50px);
+/* Proyecto */
+.proyecto {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #0af;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
-    .proyecto.visible {
-    opacity: 1;
-    transform: translateY(0);
+.proyecto.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-    .proyecto:hover {
-    background: rgba(10, 170, 255, 0.3);
-    transform: scale(1.05);
+.proyecto:hover {
+  background: rgba(10, 170, 255, 0.3);
+  transform: scale(1.05);
 }
 
-    .proyecto h2 {
-    color: #0af;
-    margin-bottom: 10px;
+.proyecto h2 {
+  color: #0af;
+  margin-bottom: 10px;
 }
 
-    .proyecto p {
-    color: #ddd;
-    font-size: 0.95em;
-    line-height: 1.4;
+.proyecto p {
+  color: #ddd;
+  font-size: 0.95em;
+  line-height: 1.4;
 }
 
-    .proyecto a {
-    display: inline-block;
-    margin-top: 15px;
-    background: #0af;
-    color: #000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
+.proyecto a {
+  display: inline-block;
+  margin-top: 15px;
+  background: #0af;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-    .proyecto a:hover {
-    background: #08c;
+.proyecto a:hover {
+  background: #08c;
 }
 
-    .qr {
-    margin-top: 15px;
+.qr {
+  margin-top: 15px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #0af;
+  border-radius: 5px;
+}
+
+/* Redes sociales */
+.redes {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.redes a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.redes a:hover {
+  color: #0af;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Botón volver arriba */
+#btnTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0af;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s;
+}
+
+#btnTop:hover {
+  background: #08c;
+}
+
+/* =======================
+   Media Queries
+   ======================= */
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .contenedor {
+    padding: 20px 10px;
+  }
+
+  .proyecto {
+    max-width: 90%;
+  }
+
+  .redes a {
+    margin: 0 10px;
+    font-size: 1em;
+  }
+}
+
+/* Para pantallas muy pequeñas (celulares) */
+@media (max-width: 480px) {
+  header img {
     width: 120px;
     height: 120px;
-    border: 2px solid #0af;
-    border-radius: 5px;
-}
+  }
 
-    /* Redes sociales */
-    .redes {
-    text-align: center;
-    margin: 40px 0;
-}
+  header h1 {
+    font-size: 1.7em;
+  }
 
-    .redes a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
+  .proyecto p {
+    font-size: 0.9em;
+  }
 
-    .redes a:hover {
-    color: #0af;
-}
+  .qr {
+    width: 100px;
+    height: 100px;
+  }
 
-    /* Footer */
-    footer {
-    background: rgba(0,0,0,0.6);
-    text-align: center;
-    padding: 20px;
-}
-
-  /* Botón volver arriba */
-    #btnTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #0af;
-    color: #000;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    transition: background 0.3s;
-}
-
-    #btnTop:hover {
-    background: #08c;
+  #btnTop {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
 }
